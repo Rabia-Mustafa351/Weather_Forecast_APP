@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <form method="post">
+        <input type="text" name="city" placeholder="Enter city name">
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather %}
+        <h2>{{ weather.city }}</h2>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+        <p>Description: {{ weather.description }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
+    {% endif %}
+</body>
+</html>
